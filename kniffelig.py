@@ -1,5 +1,5 @@
 from random import randint
-
+import winsound
 def Kniffelig():
     roll1 = roll()
     print(format("Du hast gewürfelt: ", '64s'), roll1)
@@ -131,41 +131,54 @@ def rollType(diceList):
     if 5 in counts:
         Kniffel = True
         print(format("KNIFFEL", '>80s'))
+        winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
     elif 3 in counts and 2 in counts:
         volles_Haus = True
         print(format("volles Haus", '>80s'))
+        winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
     elif 3 in counts and 2 not in counts:
         Dreierpasch = True
         print(format("Dreierpasch", '>80s'))
+        winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
     elif 4 in counts:
         Viererpasch = True
         print(format("Viererpasch", '>80s'))
+        winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
     elif len(diceListNew) == 3:
         print(format("Oh weh, nichts gewürfelt!", '>80s'))
+        winsound.PlaySound("boo.wav", winsound.SND_FILENAME)
     elif len(diceListNew) == 4:
         if diceListNew[-2] == diceListNew[-1] -1 and diceListNew[-3] == diceListNew[-2] - 1 and diceListNew[-4] == diceListNew[-3] - 1:
             kleine_Straße = True
             print(format("kleine Straße", '>80s'))
+            winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
         else:
             print(format("Oh weh, nichts gewürfelt!", '>80s'))
+            winsound.PlaySound("boo.wav", winsound.SND_FILENAME)
     elif len(diceListNew) == 5:
         if diceListNew[-2] == diceListNew[-1] - 1 and diceListNew[-3] == diceListNew[-2] - 1 and diceListNew[-4] == diceListNew[-3] - 1 and diceListNew[-5] == diceListNew[-4] - 1:
             große_Straße = True
             print(format("große Straße", '>80s'))
+            winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
         elif diceListNew[-2] == diceListNew[-1] -1 and diceListNew[-3] == diceListNew[-2] - 1 and diceListNew[-4] == diceListNew[-3] - 1:
             kleine_Straße = True
             print(format("kleine Straße", '>80s'))
+            winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
         elif diceListNew[-3] == diceListNew[-2] - 1 and diceListNew[-4] == diceListNew[-3] -1 and diceListNew[-5] == diceListNew[-4] - 1:
             kleine_Straße = True
             print(format("kleine Straße", '>80s'))
+            winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
         elif diceListNew[0, 1, 2, 3, 4] % 2 == 0:
             gerade = True
             print (format("gerade Zahlen", '>80s'))
+            winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
         elif diceListNew[0, 1, 2, 3, 4] % 2 != 0:
             ungerade = True
             print (format("ungerade Zahlen", '>80s'))
+            winsound.PlaySound("applause3.wav", winsound.SND_FILENAME)
         else:
-            print(format("Oh weh, nichts gewürfelt!", '>80s'))    
+            print(format("Oh weh, nichts gewürfelt!", '>80s'))   
+            winsound.PlaySound("boo.wav", winsound.SND_FILENAME) 
     # kleiner zehn
     
     else:
@@ -193,7 +206,7 @@ def main():
     geradePer = 0
     ungeradePer = 0
     kleiner_ZehnPer = 0
-
+    
     print("")
     print("-" * 80)
     print("")
@@ -302,6 +315,7 @@ def main():
         ungeradePer = (ungerade / gameCount) * 100
         kleiner_ZehnPer = (kleiner_Zehn / gameCount) * 100
         print("-" * 80)
+        winsound.PlaySound("drum_roll_y.wav", winsound.SND_FILENAME)
         print("")
         print(format("Spielstatistik", '>43s'))
         print("")
