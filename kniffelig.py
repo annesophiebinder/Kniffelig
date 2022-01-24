@@ -313,85 +313,81 @@ def main():
         lst2=[]
         lst3=[]
         if Kniffel > 1 or Kniffel == 0:
-            print("Kniffel:" , ' '*16, Kniffel,' '*4, "(", KniffelPer, "% )")
+            print("Kniffel:" , ' '*16, Kniffel,' '*4, KniffelPer, "%")
             lst2.append(Kniffel)
             lst3.append(int(KniffelPer))
             print("")
         else:
-            print("Kniffel:", ' '*16 , Kniffel,' '*4, "(", KniffelPer, "% )")
+            print("Kniffel:", ' '*16 , Kniffel,' '*4, KniffelPer, "%")
             lst2.append(Kniffel)
             lst3.append(int(KniffelPer))
             print("")
         if volles_Haus > 1 or volles_Haus == 0:
-            print("volle Häuser:",' '*11, volles_Haus,' '*4, "(", volles_HausPer, "% )")
+            print("volle Häuser:",' '*11, volles_Haus,' '*4, volles_HausPer, "%")
             lst2.append(volles_Haus)
             lst3.append(int(volles_HausPer))
             print("")
         else:
-            print("volles Haus:",' '*12, volles_Haus,' '*4, "(", volles_HausPer, "% )")
+            print("volles Haus:",' '*12, volles_Haus,' '*4, volles_HausPer, "%")
             lst2.append(volles_Haus)
             lst3.append(int(volles_HausPer))
             print("")
         if kleine_Straße > 1 or kleine_Straße == 0:
-            print("kleine Straßen:",' '*9, kleine_Straße,' '*4, "(", kleine_StraßePer, "% )")
+            print("kleine Straßen:",' '*9, kleine_Straße,' '*4, kleine_StraßePer, "%")
             lst2.append(kleine_Straße)
             lst3.append(int(kleine_StraßePer))
             print("")
         else:
-            print("kleine Straße:",' '*10, kleine_Straße,' '*4, "(", kleine_StraßePer, "% )")
+            print("kleine Straße:",' '*10, kleine_Straße,' '*4, kleine_StraßePer, "%")
             lst2.append(kleine_Straße)
             lst3.append(int(kleine_StraßePer))
             print("")
         if große_Straße > 1 or große_Straße == 0:
-            print("große Straßen:",' '*10, große_Straße,' '*4, "(", große_StraßePer, "% )")
+            print("große Straßen:",' '*10, große_Straße,' '*4, große_StraßePer, "%")
             lst2.append(große_Straße)
             lst3.append(int(große_StraßePer))
             print("")
         else:
-            print("große Straße:",' '*11, große_Straße,' '*4, "(", große_StraßePer, "% )")
+            print("große Straße:",' '*11, große_Straße,' '*4, große_StraßePer, "%")
             lst2.append(große_Straße)
             lst3.append(int(große_StraßePer))
             print("")
         if Viererpasch > 1 or Viererpasch == 0:
-            print("Viererpasche:",' '*11, Viererpasch,' '*4, "(", ViererpaschPer, "% )")
+            print("Viererpasche:",' '*11, Viererpasch,' '*4, ViererpaschPer, "%")
             lst2.append(Viererpasch)
             lst3.append(int(ViererpaschPer))
             print("")
         else:
-            print("Viererpasch:",' '*11, Viererpasch,' '*4, "(", ViererpaschPer, "% )")
+            print("Viererpasch:",' '*11, Viererpasch,' '*4, ViererpaschPer, "%")
             lst2.append(Viererpasch)
             lst3.append(int(ViererpaschPer))
             print("")
         if Dreierpasch > 1 or Dreierpasch == 0:
-            print("Dreierpasche:",' '*11, Dreierpasch,' '*4, "(", DreierpaschPer, "% )")
+            print("Dreierpasche:",' '*11, Dreierpasch,' '*4, DreierpaschPer, "%")
             lst2.append(Dreierpasch)
             lst3.append(int(DreierpaschPer))
             print("")
         else:
-            print("Dreierpasch:",' '*12, Dreierpasch,' '*4, "(", DreierpaschPer, "% )")
+            print("Dreierpasch:",' '*12, Dreierpasch,' '*4, DreierpaschPer, "%")
             lst2.append(Dreierpasch)
             lst3.append(int(DreierpaschPer))
             print("")
         if gerade > 1 or gerade == 0:
-            print("gerade Zahlen:",' '*10, gerade,' '*4, "(", geradePer, "% )")
+            print("gerade Zahlen:",' '*10, gerade,' '*4, geradePer, "%")
             print("")
         else:
-            print("gerade Zahlen:",' '*10, gerade,' '*4, "(", geradePer, "% )")
+            print("gerade Zahlen:",' '*10, gerade,' '*4, geradePer, "%")
             print("")
         if ungerade > 1 or ungerade == 0:
-            print("ungerade Zahlen:",' '*8, ungerade,' '*4, "(", ungeradePer, "% )")
+            print("ungerade Zahlen:",' '*8, ungerade,' '*4, ungeradePer, "%")
             print("")
         else:
-            print("ungerade Zahlen:",' '*8, ungerade,' '*4, "(", ungeradePer, "% )")
+            print("ungerade Zahlen:",' '*8, ungerade,' '*4, ungeradePer, "%")
             print("")
         if kleiner_Zehn > 1 or kleiner_Zehn == 0:
-            print("kleiner Zehn:",' '*11, kleiner_Zehn,' '*4, "(", kleiner_ZehnPer, "% )")
+            print("kleiner Zehn:",' '*11, kleiner_Zehn,' '*4, kleiner_ZehnPer, "%")
             print("")
         else:
-            print("kleiner Zehn:",' '*11, kleiner_Zehn,' '*4, "(", kleiner_ZehnPer, "% )")
+            print("kleiner Zehn:",' '*11, kleiner_Zehn,' '*4, kleiner_ZehnPer, "%")
             print("")
-        print(lst1)
-        print(lst2)
-        print(lst3)
-
 main()
