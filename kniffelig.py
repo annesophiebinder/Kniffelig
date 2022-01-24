@@ -1,4 +1,6 @@
 from random import randint
+import winsound
+import pandas as pd
 
 def Kniffelig():
     roll1 = roll()
@@ -148,6 +150,7 @@ def rollType(diceList):
             print(format("kleine Straße", '>80s'))
         else:
             print(format("Oh weh, nichts gewürfelt!", '>80s'))
+            winsound.PlaySound("boo.wav", winsound.SND_FILENAME)
     elif len(diceListNew) == 5:
         if diceListNew[-2] == diceListNew[-1] - 1 and diceListNew[-3] == diceListNew[-2] - 1 and diceListNew[-4] == diceListNew[-3] - 1 and diceListNew[-5] == diceListNew[-4] - 1:
             große_Straße = True
@@ -307,66 +310,68 @@ def main():
         print("")
         print("In", gameCount, "Würfen hast du folgendes gewürfelt:\n")
         
-        lst=[list]
+        lst1=[list]
+        lst0=["Kniffel","volle Häuser", "kleine Straßen", "große Straßen", "Viererpasche", "Dreierpasche"]
+        
         if Kniffel > 1 or Kniffel == 0:
             print("Kniffels:", Kniffel, "(", int(KniffelPer), "% )")
-            lst.append(Kniffel)
-            lst.append(int(KniffelPer))
+            lst1.append(Kniffel)
+            lst1.append(int(KniffelPer))
             print("")
         else:
             print("Kniffel:", Kniffel, "(", int(KniffelPer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(Kniffel)
-            lst.append(int(KniffelPer))
+            lst1.append(Kniffel)
+            lst1.append(int(KniffelPer))
             print("")
         if volles_Haus > 1 or volles_Haus == 0:
             print("volle Häuser:", volles_Haus, "(", int(volles_HausPer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(volles_Haus)
-            lst.append(int(volles_HausPer))
+            lst1.append(volles_Haus)
+            lst1.append(int(volles_HausPer))
             print("")
         else:
             print("volles Haus:", volles_Haus, "(", int(volles_HausPer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(volles_Haus)
-            lst.append(int(volles_HausPer))
+            lst1.append(volles_Haus)
+            lst1.append(int(volles_HausPer))
             print("")
         if kleine_Straße > 1 or kleine_Straße == 0:
             print("kleine Straßen:", kleine_Straße, "(", int(kleine_StraßePer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(kleine_Straße)
-            lst.append(int(kleine_StraßePer))
+            lst1.append(kleine_Straße)
+            lst1.append(int(kleine_StraßePer))
             print("")
         else:
             print("kleine Straße:", kleine_Straße, "(", int(kleine_StraßePer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(kleine_Straße)
-            lst.append(int(kleine_StraßePer))
+            lst1.append(kleine_Straße)
+            lst1.append(int(kleine_StraßePer))
             print("")
         if große_Straße > 1 or große_Straße == 0:
             print("große Straßen:", große_Straße, "(", int(große_StraßePer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(große_Straße)
-            lst.append(int(große_StraßePer))
+            lst1.append(große_Straße)
+            lst1.append(int(große_StraßePer))
             print("")
         else:
             print("große Straße:", große_Straße, "(", int(große_StraßePer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(große_Straße)
-            lst.append(int(große_StraßePer))
+            lst1.append(große_Straße)
+            lst1.append(int(große_StraßePer))
             print("")
         if Viererpasch > 1 or Viererpasch == 0:
             print("Viererpasche:", Viererpasch, "(", int(ViererpaschPer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(Viererpasch)
-            lst.append(int(Viererpasch))
+            lst1.append(Viererpasch)
+            lst1.append(int(ViererpaschPer))
             print("")
         else:
             print("Viererpasch:", Viererpasch, "(", int(ViererpaschPer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(Viererpasch)
-            lst.append(int(Viererpasch))
+            lst1.append(Viererpasch)
+            lst1.append(int(ViererpaschPer))
             print("")
         if Dreierpasch > 1 or Dreierpasch == 0:
             print("Dreierpasche:", Dreierpasch, "(", int(DreierpaschPer), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(Dreierpasch)
-            lst.append(int(Dreierpasch))
+            lst1.append(Dreierpasch)
+            lst1.append(int(DreierpaschPer))
             print("")
         else:
             print("Dreierpasch:", Dreierpasch, "(", round(DreierpaschPer, 2), "% )".format("Wurf","Anzahl","Anteil"))
-            lst.append(Dreierpasch)
-            lst.append(int(Dreierpasch))
+            lst1.append(Dreierpasch)
+            lst1.append(int(DreierpaschPer))
             print("")
         if gerade > 1 or gerade == 0:
             print("gerade Zahlen:", gerade, "(", int(geradePer), "% )".format("Wurf","Anzahl","Anteil"))
@@ -387,6 +392,10 @@ def main():
             print("kleiner Zehn:", kleiner_Zehn, "(", round(kleiner_ZehnPer, 2), "% )".format("Wurf","Anzahl","Anteil"))
             print("")
 
-        print(lst, header="Wurf", "Anzahl", "Anteil")
-        
+        print(lst1)
+        df = pd.DataFrame(list(zip(lst0, list1)), columns = ['Wurf', 'Anzahl', 'Anteil'])
+        print(df)
+
+
+
 main()
